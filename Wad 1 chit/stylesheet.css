@@ -1,0 +1,27 @@
+body{
+    min-height: 100vh;
+    display: flex;
+}
+
+.sidebar{
+    width : 220px;
+    background: rgb(32, 30, 30);
+    color: white;
+}
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.sidebar a:hover{
+    background: rgb(79, 72, 72);
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.content{
+    flex: 1;
+    padding: 20px;
+}
