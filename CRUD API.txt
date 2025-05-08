@@ -1,0 +1,72 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+const body_parser = require('body-parser');
+
+app.use(body_parser.json());
+app.use(body_parser.urlencoded({extended : true}));
+
+const Student = require('./StudentModel.js');
+
+mongoose.connect("mongodb://localhost:27017/WAD")
+.then(()=>{
+    console.log("Connected to MongoDB");
+})
+.catch((err)=>{
+    console.log("Error connecting to MongoDB", err);
+});
+
+
+app.get('/' ,async (req , res)=>{
+    const students = await Student.find();
+    res.send(students);
+});
+
+app.post('/add' , async (req , res) => {
+   const {name , age , email , course} = req.body;
+   const new_student = await Student.create({name , age , email , course});
+   res.send("Successfully created new student"); 
+});
+
+
+app.put('/update/:id' , async (req , res) => {
+    const {name , age , email , course} = req.body;
+    const {id} = req.params;
+    const req_student = await Student.findByIdAndUpdate(id , {name , age , email , course} , {new : true});
+
+    if(req_student){
+        res.send("Successfully updated student");
+    }else{
+        res.send("Student not found");
+    }
+});
+
+
+app.delete('/delete/:id', async (req , res) => {
+    const {id} = req.params;
+    const req_student = await Student.findByIdAndDelete(id);
+
+    if(req_student){
+        res.send("Successfully deleted student");
+    }else{
+        res.send("Student not found");
+    }
+});
+
+
+app.listen(3000 , () => {
+    console.log("Server is running on port 3000");
+})
+
+//schema
+
+const mongoose = require('mongoose');
+
+const StudentSchema = mongoose.Schema({
+    name : String,
+    age : Number,
+    email : String,
+    course : String
+});
+
+module.exports = mongoose.model('Student' , StudentSchema);
