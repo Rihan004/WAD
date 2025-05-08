@@ -1,0 +1,18 @@
+ssh -i "Path" ec2-user@IP
+
+pwd
+
+sudo yum install httpd
+
+sudo -i
+(root user)
+
+cd /var/www/html
+
+ls
+cat > index.html
+Hii apache web server is running on rihans ec2
+
+(ctrl + d) twice to save the file
+
+sudo systemctl restart httpd
