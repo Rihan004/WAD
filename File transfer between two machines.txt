@@ -1,0 +1,47 @@
+#  VM1 :
+vagrant 'iso file from discover vagrant boxes'
+
+//enable from vagrant file in notpad
+1) private network 
+2) public 
+3) vb wala start and end
+
+vagrant up
+
+vagrant ssh
+
+ls
+vi abc.txt
+i -(insert)
+add content
+:wq + enter (save)
+
+#  VM2 :
+vagrant 'iso file from discover vagrant boxes'
+
+//enable from vagrant file in notpad
+1) private network 
+2) public 
+3) vb wala start and end
+
+vagrant up
+
+vagrant ssh
+
+ifconfig
+
+
+get inte addr IPfrom here (IP)
+
+
+#  VM1 :
+
+scp abc.txt vagrant@IP:/home/vagrant
+
+pass : vagrant
+
+
+#  VM2 :
+
+ls
+cat abc.txt

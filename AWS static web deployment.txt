@@ -1,0 +1,39 @@
+ssh -i "Path" ec2-user@IP
+
+(Go to Free css)
+wget {link}
+ls
+unzip {zip file name}
+ls
+sudo yum install -y httpd 
+sudo systemctl start httpd
+sudo systemctl status httpd
+
+pwd
+(home/ec2-user)
+
+sudo mv {file name } /var/www/html
+
+sudo su -
+
+cd /var/www/html
+
+mv {file name}/* .
+
+sudo systemctl restart httpd
+
+
+GitHub part:
+
+sudo su -
+(root user)
+
+sudo yum install git -y
+
+cd /var/www/html/
+sudo git clone repository-url
+
+sudo cp repository_name/index.html .
+
+sudo systemctl restart httpd
+

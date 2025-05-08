@@ -1,0 +1,24 @@
+WAD - Docker (Open Jdk) .,
+
+Isb_release -a
+sudo apt -get update 
+sudo apt Install docker. io 
+sudo usermod -aG docker #USER.
+Sudo docker images
+sudo docker run -it-d openjdk
+sudo docker images 
+sudo docker ps
+sudo docker exec -it 'container id jshell
+jshell > System. out.printin (" Hello .");
+Int a = 20;
+in+ b= 10;
+System. Out. pintin (int c);
+int C = a+b;
+/exit
+sudo docker ps
+sudo docker stop 'container id'
+
+
+
+
+

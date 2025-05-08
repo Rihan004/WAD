@@ -1,0 +1,11 @@
+sudo su -
+(root user)
+
+sudo yum install git -y
+
+cd /var/www/html/
+sudo git clone repository-url
+
+sudo cp repository_name/index.html .
+
+sudo systemctl restart httpd

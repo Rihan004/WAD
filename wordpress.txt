@@ -1,0 +1,13 @@
+sudo -i
+vi /etc/hostname
+
+do:
+i
+wordpress
+:wq + enter
+
+hostname wordpress
+
+sudo -i
+
+
